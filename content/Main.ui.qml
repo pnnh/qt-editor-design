@@ -21,10 +21,6 @@ Rectangle {
                 Layout.fillWidth: true
                 Layout.minimumHeight: 50
                 Layout.maximumHeight: 100
-                Text {
-                    anchors.centerIn: parent
-                    text: parent.width + 'x' + parent.height
-                }
                 Row {
                     anchors.fill: parent
                     Button {
@@ -39,14 +35,115 @@ Rectangle {
             Layout.alignment: Qt.AlignTop
             Layout.topMargin: 0
             Rectangle {
+                Layout.minimumHeight: 100
+                Layout.preferredWidth: 100
+                Layout.fillHeight: true
+                Layout.leftMargin: 8
+                Layout.rightMargin: 8
+                Layout.topMargin: 8
+                Layout.bottomMargin: 8
+
+                ColumnLayout {
+                    anchors.fill: parent
+                    Rectangle {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        height: 40
+                        color: "#EDF3FF"
+                        RowLayout {
+                            anchors.fill: parent
+                            Button {
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                contentItem: Text {
+                                    Layout.alignment: Qt.AlignVCenter
+                                    verticalAlignment: Text.AlignVCenter
+                                    text: "所有"
+                                }
+                                background: Rectangle {
+                                    opacity: 0
+                                }
+                            }
+                        }
+                    }
+                    Rectangle {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        height: 40
+                        color: "#EDF3FF"
+                        RowLayout {
+                            anchors.fill: parent
+                            Button {
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                contentItem: Text {
+                                    Layout.alignment: Qt.AlignVCenter
+                                    verticalAlignment: Text.AlignVCenter
+                                    text: "今天"
+                                }
+                                background: Rectangle {
+                                    opacity: 0
+                                }
+                            }
+                        }
+                    }
+                    Rectangle {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        height: 40
+                        color: "#EDF3FF"
+                        RowLayout {
+                            anchors.fill: parent
+                            Button {
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                contentItem: Text {
+                                    Layout.alignment: Qt.AlignVCenter
+                                    verticalAlignment: Text.AlignVCenter
+                                    text: "明天"
+                                }
+                                background: Rectangle {
+                                    opacity: 0
+                                }
+                            }
+                        }
+                    }
+                    Rectangle {
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        height: 40
+                        color: "#EDF3FF"
+                        RowLayout {
+                            anchors.fill: parent
+                            Button {
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                contentItem: Text {
+                                    Layout.alignment: Qt.AlignVCenter
+                                    verticalAlignment: Text.AlignVCenter
+                                    text: "最近7天"
+                                }
+                                background: Rectangle {
+                                    opacity: 0
+                                }
+                            }
+                        }
+                    }
+                    Item {
+                        Layout.fillHeight: true
+                    }
+                }
+            }
+
+            Rectangle {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.minimumWidth: 50
                 Layout.preferredWidth: 100
                 Layout.maximumWidth: 300
                 Layout.minimumHeight: 150
-                Layout.leftMargin: 16
-                Layout.rightMargin: 16
+                Layout.leftMargin: 8
+                Layout.rightMargin: 8
                 Layout.topMargin: 8
                 Layout.bottomMargin: 8
 
@@ -124,16 +221,11 @@ Rectangle {
                 }
             }
             Rectangle {
-                color: 'plum'
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.minimumWidth: 100
                 Layout.preferredWidth: 200
                 Layout.preferredHeight: 100
-                Text {
-                    anchors.centerIn: parent
-                    text: parent.width + 'x' + parent.height
-                }
                 TextEdit {
                     width: 240
                     textFormat: Text.RichText
@@ -150,8 +242,9 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;formeditorZoom:0.66;height:480;width:640}D{i:4}D{i:6}D{i:5}D{i:3}
-D{i:2}D{i:10}D{i:9}D{i:13}D{i:18}D{i:8}D{i:24}D{i:25}D{i:23}D{i:7}D{i:1}
+    D{i:0;autoSize:true;height:480;width:640}D{i:5}D{i:4}D{i:3}D{i:2}D{i:11}D{i:10}D{i:9}
+D{i:16}D{i:15}D{i:14}D{i:21}D{i:20}D{i:19}D{i:26}D{i:25}D{i:24}D{i:29}D{i:8}D{i:7}
+D{i:33}D{i:32}D{i:31}D{i:35}D{i:40}D{i:30}D{i:46}D{i:45}D{i:6}D{i:1}
 }
 ##^##*/
 

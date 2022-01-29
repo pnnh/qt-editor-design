@@ -38,7 +38,7 @@ Window {
     visible: true
     title: "QtEditorDesign"
 
-    Screen02 {
+    Main {
     }
 
 }
