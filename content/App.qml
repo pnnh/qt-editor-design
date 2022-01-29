@@ -38,8 +38,14 @@ Window {
     visible: true
     title: "QtEditorDesign"
 
-    Screen01 {
+    Screen02 {
     }
 
 }
 
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.66}D{i:1}
+}
+##^##*/
