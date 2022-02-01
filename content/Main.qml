@@ -32,7 +32,6 @@ Rectangle {
             Layout.alignment: Qt.AlignTop
             Layout.topMargin: 0
             ColumnLayout {
-                Layout.minimumHeight: 100
                 Layout.maximumWidth: 100
                 Layout.fillHeight: true
                 Layout.leftMargin: 8
@@ -40,8 +39,8 @@ Rectangle {
                 Layout.topMargin: 8
                 Layout.bottomMargin: 8
                 RowLayout {
-                    Layout.minimumHeight: 40
-                    Layout.maximumHeight: 40
+                    Layout.minimumHeight: 32
+                    Layout.maximumHeight: 32
                     Layout.fillWidth: true
                     Layout.minimumWidth: parent.width
                     Layout.maximumWidth: parent.width
@@ -75,8 +74,8 @@ Rectangle {
                     }
                 }
                 RowLayout {
-                    Layout.minimumHeight: 40
-                    Layout.maximumHeight: 40
+                    Layout.minimumHeight: 32
+                    Layout.maximumHeight: 32
                     Layout.fillWidth: true
                     Layout.minimumWidth: parent.width
                     Layout.maximumWidth: parent.width
@@ -325,13 +324,12 @@ Rectangle {
                 }
             }
 
-            Rectangle {
+            ColumnLayout {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.minimumWidth: 50
                 Layout.preferredWidth: 100
-                Layout.maximumWidth: 300
-                Layout.minimumHeight: 150
+                Layout.maximumWidth: 200
                 Layout.leftMargin: 8
                 Layout.rightMargin: 8
                 Layout.topMargin: 8
@@ -374,11 +372,16 @@ Rectangle {
                             CheckBox {
                                 Layout.preferredWidth: 15
                             }
-                            TextInput {
+                            TextField {
                                 Layout.alignment: Qt.AlignVCenter
+                                Layout.fillWidth: true
                                 verticalAlignment: Text.AlignVCenter
-                                text: "在资产转移1" + name
+                                horizontalAlignment: Text.AlignHLeft
+                                text: name
                                 selectByMouse: true
+                                background: Item {
+                                    opacity: 0
+                                }
                             }
                         }
                     }
@@ -386,10 +389,8 @@ Rectangle {
 
                 ListView {
                     id: listView
-                    anchors.top: newTask.bottom
-                    anchors.bottom: parent.bottom
-                    anchors.left: parent.left
-                    anchors.right: parent.right
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
                     topMargin: 16
                     spacing: 4
                     clip: true
@@ -410,21 +411,46 @@ Rectangle {
                     }
                 }
             }
-            Rectangle {
+
+            ColumnLayout {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.minimumWidth: 100
-                Layout.preferredWidth: 200
-                Layout.preferredHeight: 100
-                TextEdit {
-                    width: 240
-                    textFormat: Text.RichText
-                    text: "<b>Hello</b> <i>World!</i>"
-                    font.family: "Helvetica"
-                    font.pointSize: 20
-                    selectByMouse: true
-                    color: "blue"
-                    focus: true
+                Layout.minimumWidth: 200
+                RowLayout {
+                    Layout.fillWidth: true
+                    CheckBox {
+                        Layout.preferredWidth: 15
+                    }
+                    Text {
+                        Layout.preferredWidth: 100
+                        Layout.fillWidth: true
+                        text: "设置日期"
+                    }
+
+                    Image {
+                        Layout.alignment: Qt.AlignRight
+                        height: 16
+                        width: 16
+                        source: "images/flag-fill.png"
+                        fillMode: Image.PreserveAspectFit
+                    }
+                }
+                RowLayout {
+
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    TextEdit {
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        width: 240
+                        textFormat: Text.RichText
+                        text: "<b>Hello</b> <i>World!</i>"
+                        font.family: "Helvetica"
+                        font.pointSize: 20
+                        selectByMouse: true
+                        color: "blue"
+                        focus: true
+                    }
                 }
             }
         }
@@ -433,9 +459,11 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:4}D{i:3}D{i:2}D{i:8}D{i:9}D{i:7}D{i:13}
-D{i:14}D{i:12}D{i:18}D{i:19}D{i:17}D{i:23}D{i:24}D{i:22}D{i:28}D{i:29}D{i:27}D{i:32}
-D{i:34}D{i:35}D{i:33}D{i:39}D{i:40}D{i:38}D{i:44}D{i:45}D{i:43}D{i:6}D{i:51}D{i:50}
-D{i:49}D{i:53}D{i:58}D{i:48}D{i:64}D{i:63}D{i:5}D{i:1}
+    D{i:0;autoSize:true;formeditorZoom:1.1;height:480;width:640}D{i:4}D{i:3}D{i:2}D{i:8}
+D{i:9}D{i:7}D{i:13}D{i:14}D{i:12}D{i:18}D{i:19}D{i:17}D{i:23}D{i:24}D{i:22}D{i:28}
+D{i:29}D{i:27}D{i:32}D{i:34}D{i:35}D{i:33}D{i:39}D{i:40}D{i:38}D{i:44}D{i:45}D{i:43}
+D{i:6}D{i:51}D{i:50}D{i:49}D{i:53}D{i:59}D{i:48}D{i:66}D{i:67}D{i:68}D{i:65}D{i:70}
+D{i:69}D{i:64}D{i:5}D{i:1}
 }
 ##^##*/
+
